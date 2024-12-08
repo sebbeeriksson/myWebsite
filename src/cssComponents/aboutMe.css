@@ -1,0 +1,74 @@
+.about-me-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: red;
+    position: relative;
+    padding-top: 30vh;
+    overflow: hidden;
+  }
+  
+  .image-info-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center children vertically */
+  }
+  
+  .image-info-container.hovered {
+    width: 80vw;
+    height: 33vh; /* Adjust height on hover */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-top: 30px;
+  }
+  
+  .portrait-image {
+    height: 200px;
+    border-radius: 30px;
+    object-fit: cover;
+    transition: height 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .image-info-container.hovered .portrait-image {
+    height: 100px;
+    transform: translateX(50%);
+    position: absolute; /* Position image absolutely */
+    top: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+  }
+  
+  .info-text {
+    display: none;
+    text-align: left;
+    padding-left: 20px;
+    animation: fadeIn 0.3s ease-in-out;
+    flex-grow: 1;
+  }
+  
+  .image-info-container.hovered .info-text {
+    display: block;
+    margin-top: 120px; /* Ensure text does not overlap the image */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .additional-content {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
